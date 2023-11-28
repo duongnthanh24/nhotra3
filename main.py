@@ -169,8 +169,6 @@ chart_data = pd.DataFrame(
 chart_data = chart_data.style.format(subset=['Lãi'], formatter="{:,.1f}")
 #st.bar_chart(chart_data, x='Tháng')
 
-
-
 df = pd.DataFrame(
    {
        "Ngày": payment_date,
@@ -182,31 +180,30 @@ df = pd.DataFrame(
 )
 
 df['Tổng'] = df['Lãi'] + df['Gốc']
+df
 
 
-#df = pd.DataFrame({'col1': [1000, 2000, 3000], 'col2': [4000, 5000, 6000]})
 
-gb = GridOptionsBuilder.from_dataframe(df)
-gb.configure_column("Lãi", 
-                    type=["numericColumn","numberColumnFilter","customNumericFormat"], 
-                    valueFormatter="data.Lãi.toLocaleString('en-US');") 
+# gb = GridOptionsBuilder.from_dataframe(df)
+# gb.configure_column("Lãi", 
+#                     type=["numericColumn","numberColumnFilter","customNumericFormat"], 
+#                     valueFormatter="data.Lãi.toLocaleString('en-US');") 
                     
-gb.configure_column("Gốc", 
-                    type=["numericColumn","numberColumnFilter","customNumericFormat"], 
-                    valueFormatter="data.Gốc.toLocaleString('en-US');") 
+# gb.configure_column("Gốc", 
+#                     type=["numericColumn","numberColumnFilter","customNumericFormat"], 
+#                     valueFormatter="data.Gốc.toLocaleString('en-US');") 
 
-gb.configure_column("Tổng", 
-                    type=["numericColumn","numberColumnFilter","customNumericFormat"], 
-                    valueFormatter="data.Tổng.toLocaleString('en-US');") 
-gb.configure_column("Ngày", type=["customDateTimeFormat"], custom_format_string='yyyy-MM-dd')
-vgo = gb.build()
-vgo["autoSizeAllColumns"] = True
-st.write("*Đơn vị: VNĐ*")
+# gb.configure_column("Tổng", 
+#                     type=["numericColumn","numberColumnFilter","customNumericFormat"], 
+#                     valueFormatter="data.Tổng.toLocaleString('en-US');") 
+# gb.configure_column("Ngày", type=["customDateTimeFormat"], custom_format_string='yyyy-MM-dd')
+# vgo = gb.build()
+# vgo["autoSizeAllColumns"] = True
+# st.write("*Đơn vị: VNĐ*")
 
 
-AgGrid(df, gridOptions=vgo,  columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS)
-#st.markdown(df.style.format(subset=['Lãi', 'Gốc'], formatter="{:,.0f}")\
-#                .hide(axis="index").to_html(), unsafe_allow_html=True)
+# AgGrid(df, gridOptions=vgo,  columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS)
+
 
 
 
