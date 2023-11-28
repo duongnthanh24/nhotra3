@@ -10,7 +10,7 @@ import base64
 
 from datetime import date
 from dateutil.relativedelta import relativedelta 
-from st_aggrid import GridOptionsBuilder, AgGrid, ColumnsAutoSizeMode
+#from st_aggrid import GridOptionsBuilder, AgGrid, ColumnsAutoSizeMode
 st.set_page_config(
         page_title="Customer response generator", page_icon=":bird:")
 
