@@ -180,6 +180,11 @@ df = pd.DataFrame(
 )
 
 df['Tổng'] = df['Lãi'] + df['Gốc']
+df.loc['Tổng']= df.sum(numeric_only=True, axis=0)
+
+df.Tổng = df.Tổng.round(0)
+df.Lãi = df.Lãi.round(0)
+df.Gốc = df.Gốc.round(0)
 df
 
 
