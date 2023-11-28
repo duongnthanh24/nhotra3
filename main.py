@@ -10,7 +10,7 @@ import base64
 
 from datetime import date
 from dateutil.relativedelta import relativedelta 
-
+from st_aggrid import GridOptionsBuilder, AgGrid, ColumnsAutoSizeMode
 st.set_page_config(
         page_title="Customer response generator", page_icon=":bird:")
 
@@ -169,7 +169,7 @@ chart_data = pd.DataFrame(
 chart_data = chart_data.style.format(subset=['Lãi'], formatter="{:,.1f}")
 #st.bar_chart(chart_data, x='Tháng')
 
-from st_aggrid import GridOptionsBuilder, AgGrid, ColumnsAutoSizeMode
+
 
 df = pd.DataFrame(
    {
