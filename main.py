@@ -186,7 +186,6 @@ df.Tổng = df.Tổng.round(0)
 df.Lãi = df.Lãi.round(0)
 df.Gốc = df.Gốc.round(0)
 df
-df
 
 
 
